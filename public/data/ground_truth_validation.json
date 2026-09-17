@@ -1,0 +1,28 @@
+{
+  "available": false,
+  "spatial_layers_loaded": 0,
+  "field_verified": false,
+  "is_probability": false,
+  "message": "Chưa tải được point/polygon ground truth công khai. Không tạo dữ liệu thay thế.",
+  "source_context": [
+    {
+      "name": "Stimson Center — War Legacies Data Dashboard",
+      "url": "https://www.stimson.org/2024/war-legacies-data-dashboard/",
+      "arcgis_experience_item": "70dd78951d9e454faaf78fa8f265744f",
+      "role": "public spatial validation discovery",
+      "scope_note": "Stimson describes the Quang Tri Clearance Data tab as showing clearance efforts in Dong Ha District and states the data are courtesy of QTMAC."
+    },
+    {
+      "name": "Quang Tri Mine Action Center (QTMAC)",
+      "url": "https://qtmac.vn/public/en",
+      "role": "authoritative mine-action context / IMSMA provenance",
+      "scope_note": "QTMAC states dashboard figures are updated from the IMSMA database managed by QTMAC/DBU.",
+      "aggregate_snapshot": {
+        "surveyed_cha_area_ha": 91581,
+        "land_released_ha": 63604,
+        "explosive_ordnance_found_destroyed": 938541,
+        "use": "context_only_not_spatial_ground_truth"
+      }
+    }
+  ]
+}

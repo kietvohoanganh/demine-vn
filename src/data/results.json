@@ -1,0 +1,92 @@
+{
+  "mode": "real_historical_evidence",
+  "title": "Hỗ trợ xếp thứ tự ưu tiên khảo sát bom mìn từ dữ liệu thực",
+  "question": "Khu vực nào nên được khảo sát trước?",
+  "cells": 39870,
+  "airstrike_records_in_aoi": 28781,
+  "recorded_weapons_in_aoi": 376265,
+  "craters_in_aoi": 61361,
+  "cells_with_craters": 21724,
+  "priority_score_max": 0.9846689240030098,
+  "top20_evidence_coverage": 0.30894506365672886,
+  "field_verified": false,
+  "is_probability": false,
+  "grid_resolution_m": 100,
+  "hotspot_spacing_m": 300,
+  "sources": [
+    {
+      "label": "Hồ sơ không kích giải mật",
+      "technical": "THOR — Theater History of Operations Reports"
+    },
+    {
+      "label": "Dấu vết hố bom từ ảnh vệ tinh lịch sử",
+      "technical": "Kết quả nhận diện hố bom trên ảnh KH-9 HEXAGON"
+    }
+  ],
+  "figures": [
+    {
+      "file": "01_muc_tap_trung_bang_chung.png",
+      "title": "Mức tập trung bằng chứng lịch sử",
+      "caption": "Tỷ trọng điểm bằng chứng trong phần diện tích được ưu tiên khảo sát."
+    },
+    {
+      "file": "02_ban_do_uu_tien.png",
+      "title": "Bản đồ ưu tiên khảo sát",
+      "caption": "Phân bố chỉ số ưu tiên; các điểm đánh dấu là tâm ô phân tích."
+    },
+    {
+      "file": "03_ba_lop_thong_tin.png",
+      "title": "Ba lớp thông tin chính",
+      "caption": "Hồ sơ không kích giải mật, dấu vết hố bom lịch sử và chỉ số ưu tiên tổng hợp."
+    },
+    {
+      "file": "04_phan_bo_muc_uu_tien.png",
+      "title": "Phân bố mức ưu tiên",
+      "caption": "Số ô lưới thuộc từng mức ưu tiên trong toàn vùng nghiên cứu."
+    },
+    {
+      "file": "05_thanh_phan_diem_uu_tien.png",
+      "title": "Thành phần điểm ưu tiên",
+      "caption": "Đóng góp của hồ sơ không kích và dấu vết hố bom vào chỉ số ưu tiên."
+    },
+    {
+      "file": "06_top_khu_vuc_uu_tien.png",
+      "title": "Các khu vực ưu tiên cao nhất",
+      "caption": "So sánh chỉ số ưu tiên của các khu vực đứng đầu."
+    },
+    {
+      "file": "07_muc_dong_thuan_nguon.png",
+      "title": "Mức đồng thuận giữa hai nguồn",
+      "caption": "So sánh bằng chứng từ hồ sơ không kích với bằng chứng từ dấu vết hố bom."
+    }
+  ],
+  "warning": "Chỉ số ưu tiên dùng để xếp thứ tự khảo sát, không phải xác suất còn bom mìn, vật nổ. Mức ưu tiên thấp không đồng nghĩa với đất an toàn.",
+  "ground_truth": {
+    "available": false,
+    "spatial_layers_loaded": 0,
+    "field_verified": false,
+    "is_probability": false,
+    "message": "Chưa tải được point/polygon ground truth công khai. Không tạo dữ liệu thay thế.",
+    "source_context": [
+      {
+        "name": "Stimson Center — War Legacies Data Dashboard",
+        "url": "https://www.stimson.org/2024/war-legacies-data-dashboard/",
+        "arcgis_experience_item": "70dd78951d9e454faaf78fa8f265744f",
+        "role": "public spatial validation discovery",
+        "scope_note": "Stimson describes the Quang Tri Clearance Data tab as showing clearance efforts in Dong Ha District and states the data are courtesy of QTMAC."
+      },
+      {
+        "name": "Quang Tri Mine Action Center (QTMAC)",
+        "url": "https://qtmac.vn/public/en",
+        "role": "authoritative mine-action context / IMSMA provenance",
+        "scope_note": "QTMAC states dashboard figures are updated from the IMSMA database managed by QTMAC/DBU.",
+        "aggregate_snapshot": {
+          "surveyed_cha_area_ha": 91581,
+          "land_released_ha": 63604,
+          "explosive_ordnance_found_destroyed": 938541,
+          "use": "context_only_not_spatial_ground_truth"
+        }
+      }
+    ]
+  }
+}

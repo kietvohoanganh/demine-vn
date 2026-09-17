@@ -1,0 +1,18 @@
+# Hệ thống hỗ trợ xếp hạng khu vực ưu tiên rà phá bom mìn final strict-real runtime (Python 3.9+)
+numpy>=1.24,<2.1
+scipy>=1.10,<1.14
+pandas>=2.0,<2.4
+matplotlib>=3.7,<3.10
+requests>=2.31
+folium>=0.15,<0.21
+branca>=0.7,<0.9
+geopandas>=0.14,<1.1
+rasterio>=1.3,<1.5
+pystac-client>=0.8,<0.9
+planetary-computer>=1.0,<2
+pyproj>=3.6,<3.8
+shapely>=2.0,<2.1
+Pillow>=10,<12
+scikit-learn==1.6.1
+joblib>=1.2,<2
+threadpoolctl>=3.1,<4

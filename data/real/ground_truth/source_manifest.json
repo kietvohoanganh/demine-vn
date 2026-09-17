@@ -1,0 +1,28 @@
+{
+  "accessed_utc": "2026-09-16T17:00:00Z",
+  "ground_truth_available": false,
+  "spatial_ground_truth_policy": "Only public point/polygon records are accepted as spatial validation. Aggregate province statistics are context only and are never allocated to grid cells.",
+  "sources": [
+    {
+      "name": "Stimson Center — War Legacies Data Dashboard",
+      "url": "https://www.stimson.org/2024/war-legacies-data-dashboard/",
+      "arcgis_experience_item": "70dd78951d9e454faaf78fa8f265744f",
+      "role": "public spatial validation discovery",
+      "scope_note": "Stimson describes the Quang Tri Clearance Data tab as showing clearance efforts in Dong Ha District and states the data are courtesy of QTMAC."
+    },
+    {
+      "name": "Quang Tri Mine Action Center (QTMAC)",
+      "url": "https://qtmac.vn/public/en",
+      "role": "authoritative mine-action context / IMSMA provenance",
+      "scope_note": "QTMAC states dashboard figures are updated from the IMSMA database managed by QTMAC/DBU.",
+      "aggregate_snapshot": {
+        "surveyed_cha_area_ha": 91581,
+        "land_released_ha": 63604,
+        "explosive_ordnance_found_destroyed": 938541,
+        "use": "context_only_not_spatial_ground_truth"
+      }
+    }
+  ],
+  "downloaded_layers": [],
+  "note": "The bundled release intentionally does not convert aggregate figures into grid labels. Run scripts/fetch_real_ground_truth.py on an Internet-connected machine to discover/download public ArcGIS geometry, then scripts/integrate_ground_truth.py."
+}

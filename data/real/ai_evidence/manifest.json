@@ -1,0 +1,26 @@
+{
+  "source": "https://gis.stimson.org/server/rest/services/Hosted/Items_Found/FeatureServer/0",
+  "provider": "QTMAC via Stimson War Legacies Dashboard",
+  "retrieved_at": "2026-09-17T12:39:54.857759+00:00",
+  "bbox": [
+    106.849028,
+    16.719045,
+    107.057556,
+    16.882832999999998
+  ],
+  "fields": [
+    "objectid",
+    "hazreducdeviceinfo_guid",
+    "quantity",
+    "longitude",
+    "latitude",
+    "year",
+    "activity_id",
+    "activity_type",
+    "point_type",
+    "ordnance_category"
+  ],
+  "records": 37854,
+  "sha256": "7dfc5affafa70b0fb2bde87268a2704535d51b771b3a0c902f0012b182994a02",
+  "use": "Local research snapshot; web exports only model outputs and aggregate evaluation."
+}

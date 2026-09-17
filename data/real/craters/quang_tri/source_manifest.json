@@ -1,0 +1,8 @@
+{
+  "zenodo_record": 10629987,
+  "source_title": "Detecting Vietnam War bomb craters in declassified historical KH-9 satellite imagery - Data",
+  "extracted": [
+    "data/real/craters/quang_tri/crater_centroids.geojson",
+    "data/real/craters/quang_tri/crater_polygons.geojson"
+  ]
+}

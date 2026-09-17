@@ -1,0 +1,418 @@
+{
+  "status": "experimental",
+  "model": "HistGradientBoostingClassifier",
+  "trained_at": "2026-09-17T12:51:34.326640+00:00",
+  "cells": 39870,
+  "is_probability": false,
+  "field_verified": false,
+  "config": {
+    "learning_rate": 0.06,
+    "max_iter": 160,
+    "max_leaf_nodes": 15,
+    "min_samples_leaf": 40,
+    "l2_regularization": 2.0,
+    "random_state": 20260917
+  },
+  "sklearn_version": "1.6.1",
+  "features": [
+    "thor_percentile",
+    "kh9_percentile",
+    "thor_records",
+    "craters_in_cell",
+    "craters_within_300m",
+    "worldpop_2020"
+  ],
+  "audit": {
+    "input_records": 37854,
+    "excluded_unknown_or_small_arms": 141,
+    "excluded_outside_exact_grid": 170,
+    "excluded_reference_or_other_point": 1130,
+    "excluded_nonpositive_quantity": 7,
+    "excluded_duplicate_device_id": 2,
+    "retained_records": 36404,
+    "recorded_cells": 8431,
+    "background_cells": 31439,
+    "unique_tasks": 6284
+  },
+  "source": "https://gis.stimson.org/server/rest/services/Hosted/Items_Found/FeatureServer/0",
+  "source_retrieved_at": "2026-09-17T12:39:54.857759+00:00",
+  "source_sha256": "7dfc5affafa70b0fb2bde87268a2704535d51b771b3a0c902f0012b182994a02",
+  "grid_sha256": "1cf0f96c4ade1e3867f394b98530545ea50eef2ba8c91858c24edbd574819141",
+  "population_sha256": "b6f8b1a00b992751356d8a9c615c98eb1188397b6272114f8e0662f98a33de90",
+  "population_valid_cells": 9773,
+  "population_source": "https://data.worldpop.org/GIS/Population/Global_2015_2030/R2024B/2020/VNM/v1/100m/constrained/vnm_pop_2020_CN_100m_R2024B_v1.tif",
+  "experiment_stage": "Exploratory: WorldPop variant added after inspecting history-only CV. No untouched confirmatory test.",
+  "model_sha256": "0593105ca0f2890895125e1fafb16c7f62d556abf2b0f8285a9834c7cc2019d9",
+  "splits_sha256": "a6dc2be7dd64a44ea98996aaaf6a0e49639aa3f82117b572cd11764945b0d4a1",
+  "base_lookup_sha256": "50a56e1099107118f6fd1e60f313ddbfa46629a1495cc6dee71a731e4c38b406",
+  "evaluation": {
+    "method": "four_spatial_quadrants_task_exclusion_600m_buffer",
+    "folds": [
+      {
+        "fold": 0,
+        "name": "Tây Nam",
+        "train_cells": 28706,
+        "test_cells": 9863,
+        "excluded_train_cells": 1301,
+        "train_recorded_cells": 6512,
+        "test_recorded_cells": 1527,
+        "metrics": {
+          "random": {
+            "0.1": 0.09999999999999999,
+            "0.2": 0.19999999999999998,
+            "0.3": 0.29999999999999905
+          },
+          "thor": {
+            "0.1": 0.0870988867059594,
+            "0.2": 0.1650294695481336,
+            "0.3": 0.24950884086444008
+          },
+          "kh9": {
+            "0.1": 0.10805500982318271,
+            "0.2": 0.19929118995338807,
+            "0.3": 0.31178092579188643
+          },
+          "baseline": {
+            "0.1": 0.08860510805500987,
+            "0.2": 0.16633922724296005,
+            "0.3": 0.24688932547478717
+          },
+          "ai": {
+            "0.1": 0.21676489849377864,
+            "0.2": 0.4171578258022266,
+            "0.3": 0.5153896529142109
+          },
+          "ai_history": {
+            "0.1": 0.06352324819908317,
+            "0.2": 0.16557718640233376,
+            "0.3": 0.25343811394891946
+          },
+          "ai_population": {
+            "0.1": 0.22354587128653927,
+            "0.2": 0.40854955626312583,
+            "0.3": 0.5453416223212492
+          },
+          "ai_thor": {
+            "0.1": 0.10822502644703037,
+            "0.2": 0.2062273024944931,
+            "0.3": 0.3094089617960555
+          },
+          "ai_kh9": {
+            "0.1": 0.107640253219821,
+            "0.2": 0.21242216048019283,
+            "0.3": 0.3152005239030779
+          },
+          "logistic": {
+            "0.1": 0.19927963326784548,
+            "0.2": 0.4256712508185986,
+            "0.3": 0.5370006548788474
+          }
+        }
+      },
+      {
+        "fold": 1,
+        "name": "Đông Nam",
+        "train_cells": 28350,
+        "test_cells": 9938,
+        "excluded_train_cells": 1582,
+        "train_recorded_cells": 4653,
+        "test_recorded_cells": 2740,
+        "metrics": {
+          "random": {
+            "0.1": 0.10000000000000062,
+            "0.2": 0.20000000000000123,
+            "0.3": 0.29999999999999816
+          },
+          "thor": {
+            "0.1": 0.09306569343065693,
+            "0.2": 0.20802919708029197,
+            "0.3": 0.31496350364963505
+          },
+          "kh9": {
+            "0.1": 0.021630170316301715,
+            "0.2": 0.0737043795620438,
+            "0.3": 0.15749087591240876
+          },
+          "baseline": {
+            "0.1": 0.040145985401459854,
+            "0.2": 0.1291970802919708,
+            "0.3": 0.21715328467153286
+          },
+          "ai": {
+            "0.1": 0.0864233576642336,
+            "0.2": 0.2772262773722628,
+            "0.3": 0.4408759124087591
+          },
+          "ai_history": {
+            "0.1": 0.05515815085158152,
+            "0.2": 0.12700729927007298,
+            "0.3": 0.20471324296141813
+          },
+          "ai_population": {
+            "0.1": 0.20071308253790004,
+            "0.2": 0.4026078301260783,
+            "0.3": 0.5465244992524376
+          },
+          "ai_thor": {
+            "0.1": 0.11765752160416142,
+            "0.2": 0.2234581645692997,
+            "0.3": 0.317722063542438
+          },
+          "ai_kh9": {
+            "0.1": 0.052393117831074046,
+            "0.2": 0.11756756756756757,
+            "0.3": 0.19204866180048663
+          },
+          "logistic": {
+            "0.1": 0.19299270072992702,
+            "0.2": 0.38357664233576644,
+            "0.3": 0.49248175182481757
+          }
+        }
+      },
+      {
+        "fold": 2,
+        "name": "Tây Bắc",
+        "train_cells": 28612,
+        "test_cells": 9951,
+        "excluded_train_cells": 1307,
+        "train_recorded_cells": 7496,
+        "test_recorded_cells": 685,
+        "metrics": {
+          "random": {
+            "0.1": 0.09999999999999984,
+            "0.2": 0.19999999999999968,
+            "0.3": 0.3000000000000005
+          },
+          "thor": {
+            "0.1": 0.09635036496350365,
+            "0.2": 0.19562043795620437,
+            "0.3": 0.3051094890510949
+          },
+          "kh9": {
+            "0.1": 0.145985401459854,
+            "0.2": 0.27153284671532846,
+            "0.3": 0.3562043795620438
+          },
+          "baseline": {
+            "0.1": 0.14890510948905109,
+            "0.2": 0.20875912408759123,
+            "0.3": 0.27883211678832115
+          },
+          "ai": {
+            "0.1": 0.3007299270072993,
+            "0.2": 0.44993171650576874,
+            "0.3": 0.5515432742440041
+          },
+          "ai_history": {
+            "0.1": 0.15116788321167884,
+            "0.2": 0.291970802919708,
+            "0.3": 0.44233576642335765
+          },
+          "ai_population": {
+            "0.1": 0.27418625272037417,
+            "0.2": 0.35483222464033237,
+            "0.3": 0.43547819656029174
+          },
+          "ai_thor": {
+            "0.1": 0.11808178063772572,
+            "0.2": 0.22442822384428227,
+            "0.3": 0.36167147626322643
+          },
+          "ai_kh9": {
+            "0.1": 0.12800486618004867,
+            "0.2": 0.23941605839416058,
+            "0.3": 0.33299687174139725
+          },
+          "logistic": {
+            "0.1": 0.28175182481751826,
+            "0.2": 0.37372262773722625,
+            "0.3": 0.45985401459854014
+          }
+        }
+      },
+      {
+        "fold": 3,
+        "name": "Đông Bắc",
+        "train_cells": 28109,
+        "test_cells": 10118,
+        "excluded_train_cells": 1643,
+        "train_recorded_cells": 3998,
+        "test_recorded_cells": 3479,
+        "metrics": {
+          "random": {
+            "0.1": 0.10000000000000081,
+            "0.2": 0.20000000000000162,
+            "0.3": 0.2999999999999983
+          },
+          "thor": {
+            "0.1": 0.08536935901121012,
+            "0.2": 0.17045127910319058,
+            "0.3": 0.2584075883874677
+          },
+          "kh9": {
+            "0.1": 0.09200919804541535,
+            "0.2": 0.1872951997700489,
+            "0.3": 0.29227834539705766
+          },
+          "baseline": {
+            "0.1": 0.0870939925265881,
+            "0.2": 0.1773613107214717,
+            "0.3": 0.2647312446105203
+          },
+          "ai": {
+            "0.1": 0.1445530324805979,
+            "0.2": 0.2802529462489221,
+            "0.3": 0.4150617993676344
+          },
+          "ai_history": {
+            "0.1": 0.10600747341189999,
+            "0.2": 0.21960333429146306,
+            "0.3": 0.3301810865191147
+          },
+          "ai_population": {
+            "0.1": 0.12521605825428764,
+            "0.2": 0.25911824476598333,
+            "0.3": 0.3948714353484438
+          },
+          "ai_thor": {
+            "0.1": 0.1101349014181944,
+            "0.2": 0.21919666145018257,
+            "0.3": 0.328216018801887
+          },
+          "ai_kh9": {
+            "0.1": 0.09696135999671499,
+            "0.2": 0.19732902911977362,
+            "0.3": 0.2964579312610356
+          },
+          "logistic": {
+            "0.1": 0.12791031905720035,
+            "0.2": 0.27450416786432885,
+            "0.3": 0.40080482897384306
+          }
+        }
+      }
+    ],
+    "comparison": [
+      {
+        "id": "random",
+        "label": "Ngẫu nhiên (kỳ vọng)",
+        "coverage_10": 0.09999999999999837,
+        "coverage_20": 0.19999999999999674,
+        "coverage_30": 0.30000000000000593
+      },
+      {
+        "id": "thor",
+        "label": "Chỉ THOR",
+        "coverage_10": 0.08907602894081366,
+        "coverage_20": 0.18372672280868224,
+        "coverage_30": 0.2789704661368758
+      },
+      {
+        "id": "kh9",
+        "label": "Chỉ KH-9",
+        "coverage_10": 0.07642826078361602,
+        "coverage_20": 0.1593959965672902,
+        "coverage_30": 0.25719971976284833
+      },
+      {
+        "id": "baseline",
+        "label": "Công thức 50–50",
+        "coverage_10": 0.07713201280986835,
+        "coverage_20": 0.16226307674060017,
+        "coverage_30": 0.2471830150634563
+      },
+      {
+        "id": "logistic",
+        "label": "Hồi quy logistic",
+        "coverage_10": 0.1744870122168189,
+        "coverage_20": 0.34539200569327483,
+        "coverage_30": 0.46006404934171513
+      },
+      {
+        "id": "ai_thor",
+        "label": "AI chỉ THOR",
+        "coverage_10": 0.11287944091457217,
+        "coverage_20": 0.2186576895205184,
+        "coverage_30": 0.3241174747267146
+      },
+      {
+        "id": "ai_kh9",
+        "label": "AI chỉ KH-9",
+        "coverage_10": 0.08693342596201095,
+        "coverage_20": 0.177560368461165,
+        "coverage_30": 0.2688891630095283
+      },
+      {
+        "id": "ai_population",
+        "label": "AI chỉ dân số",
+        "coverage_10": 0.1796646473002631,
+        "coverage_20": 0.3405922280131343,
+        "coverage_30": 0.474709295867304
+      },
+      {
+        "id": "ai_history",
+        "label": "AI hai nguồn lịch sử",
+        "coverage_10": 0.0854564504012968,
+        "coverage_20": 0.1856050721902934,
+        "coverage_30": 0.28461799142619926
+      },
+      {
+        "id": "ai",
+        "label": "AI lịch sử + dân số",
+        "coverage_10": 0.15142924919938325,
+        "coverage_20": 0.31785117136833724,
+        "coverage_30": 0.45271108324719994
+      }
+    ],
+    "delta_20": 0.15558809462773707,
+    "delta_20_interval": [
+      0.11227745313804356,
+      0.24783147640436332
+    ],
+    "bootstrap_regions": 4,
+    "metric": "Coverage of unique held-out recorded cells at equal area budget per quadrant",
+    "feature_importance": [
+      {
+        "feature": "worldpop_2020",
+        "label": "Dân số WorldPop 2020",
+        "coverage_drop_20": 0.11302973865512561
+      },
+      {
+        "feature": "thor_percentile",
+        "label": "Điểm hồ sơ không kích",
+        "coverage_drop_20": 0.01691578921953503
+      },
+      {
+        "feature": "craters_within_300m",
+        "label": "Số hố bom trong 300 m",
+        "coverage_drop_20": 0.000855195375800967
+      },
+      {
+        "feature": "thor_records",
+        "label": "Số hồ sơ trong ô",
+        "coverage_drop_20": 0.0007111722025725027
+      },
+      {
+        "feature": "craters_in_cell",
+        "label": "Số hố bom trong ô",
+        "coverage_drop_20": -0.001113649456189443
+      },
+      {
+        "feature": "kh9_percentile",
+        "label": "Điểm dấu vết hố bom",
+        "coverage_drop_20": -0.00866176369933627
+      }
+    ]
+  },
+  "limitations": [
+    "Học vị trí có ghi nhận trong nguồn công khai; chịu thiên lệch nơi đã khảo sát và báo cáo.",
+    "Đây là so sánh thăm dò; đã bổ sung biến thể dân số sau lượt thử lịch sử. Chưa có tập kiểm tra xác nhận chưa từng xem.",
+    "WorldPop 2020 là bối cảnh dân cư hồi cứu, có thể phản ánh khả năng được khảo sát; không phải bằng chứng vật nổ hay kiểm chứng dự báo theo thời gian.",
+    "Ô chưa có bản ghi là dữ liệu chưa gán nhãn, không phải ô đã xác nhận không có vật nổ.",
+    "Ghi nhận vật nổ đã xử lý trong quá khứ không chứng minh hiện tại còn vật nổ.",
+    "Chưa biết đầy đủ sai số định vị và độ phủ ảnh KH-9; số hố bom bằng 0 chỉ là không có dự đoán trong nguồn.",
+    "Chưa kiểm chứng bằng khảo sát mới, dữ liệu tai nạn độc lập hoặc địa bàn ngoài vùng nghiên cứu.",
+    "Khoảng bootstrap từ bốn vùng chỉ mang tính tham khảo; chưa loại bỏ toàn bộ phụ thuộc không gian."
+  ]
+}

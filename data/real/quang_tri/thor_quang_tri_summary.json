@@ -1,0 +1,36 @@
+{
+  "source_file_uploaded": "dataset_1789529087493.rar",
+  "source_csv_inside_archive": "THOR_Vietnam_Bombing_Operations.csv",
+  "rows_in_full_thor_csv": 4670416,
+  "kinetic_rows_with_delivered_weapon_before_bbox": 1958851,
+  "raw_target_records_in_demine_bbox": 18310,
+  "aggregated_mission_event_records": 11865,
+  "total_weapons_delivered_in_bbox": 292905,
+  "date_min": "1966-01-01",
+  "date_max": "1973-01-27",
+  "median_positive_weapon_weight_lb_used_for_imputation": 500.0,
+  "fraction_raw_rows_with_real_thor_weight": 0.8077007099945385,
+  "fraction_weapons_with_real_thor_weight": 0.8369027500384083,
+  "known_tonnage_t": 53812.34086245249,
+  "hybrid_tonnage_after_imputation_t": 64646.84821227249,
+  "study_bbox_wgs84": {
+    "west": 106.85,
+    "east": 107.05658471529786,
+    "south": 16.72,
+    "north": 16.881877889065372
+  },
+  "study_grid": {
+    "origin_lon": 106.85,
+    "origin_lat": 16.72,
+    "cell_size_m": 100.0,
+    "n_cells_x": 220,
+    "n_cells_y": 180
+  },
+  "sources_in_bbox": {
+    "CACTA6669": 11738,
+    "SEADAB": 4670,
+    "CACTA6570": 1127,
+    "SACCOACT": 775
+  },
+  "important_note": "Historical strike records are real THOR records. Rows without a positive THOR WEAPONTYPEWEIGHT are imputed with the in-area positive-weight median (500 lb) ONLY to preserve the existing tonnage-based feature. Those rows remain explicitly flagged. UXO ground truth, crater imagery, clearance and accident labels remain simulated in this hybrid mode."
+}
