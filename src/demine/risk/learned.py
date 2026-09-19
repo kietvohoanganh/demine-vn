@@ -1,8 +1,8 @@
 """Learned evidence ranking, adapted from the supplied Hệ thống hỗ trợ xếp hạng khu vực ưu tiên rà phá bom mìn RiskModel.
 
-Architecture: histogram gradient boosting (legacy sklearn backend). See
-docs/LEGACY_MODEL_LICENSE.txt. Only real historical features and real recorded
-observations are used. Unrecorded cells are BACKGROUND, not verified negatives.
+Architecture: histogram gradient boosting (legacy sklearn backend). Only real
+historical features and real recorded observations are used. Unrecorded cells
+are BACKGROUND, not verified negatives.
 The classifier estimates recording propensity, not remaining-UXO probability.
 Legacy PU division, propensity weighting and isotonic calibration are disabled:
 their identification assumptions are not supported by this public snapshot.

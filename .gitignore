@@ -5,6 +5,7 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 .venv/
+.venv-*/
 venv/
 
 # Environment
@@ -67,9 +68,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-
-# Vercel local config
-.vercel/
 
 # Large raw/generated datasets - do not push to GitHub
 

@@ -1,26 +1,25 @@
 # Hệ thống hỗ trợ xếp hạng khu vực ưu tiên rà phá bom mìn
 
-Đây là phiên bản web trình diễn dùng dữ liệu thực của dự án tại Quảng Trị. Mục tiêu của hệ thống là **xếp hạng các ô không gian cần được xem xét trước** để hỗ trợ lập kế hoạch khảo sát và rà phá bom mìn.
+Ứng dụng web hỗ trợ xếp hạng các ô không gian cần được xem xét trước trong quá trình lập kế hoạch khảo sát và rà phá bom mìn tại Quảng Trị.
 
-## Hệ thống làm gì?
+Hệ thống tổng hợp hồ sơ không kích THOR, dấu vết hố bom từ ảnh vệ tinh lịch sử KH-9 và dữ liệu bối cảnh để tạo chỉ số xếp hạng tương đối cho từng ô 100 m. Kết quả được trình bày qua bản đồ, danh sách khu vực ưu tiên, tra cứu tọa độ và phần giải thích ngắn cho từng khu vực.
 
-Hệ thống tổng hợp hồ sơ không kích THOR, dấu vết hố bom từ ảnh vệ tinh lịch sử KH-9 và các dữ liệu bối cảnh có sẵn. Mô hình học máy tạo một **chỉ số xếp hạng tương đối** cho từng ô 100 m, từ đó sinh danh mục khu vực ưu tiên và hiển thị trên bản đồ.
+> Chỉ số xếp hạng không phải xác suất còn vật nổ, không xác nhận một vị trí an toàn và không thay thế khảo sát thực địa của đơn vị chuyên môn.
 
-Chỉ số này **không phải xác suất còn vật nổ**, không xác nhận một vị trí an toàn và không thay thế khảo sát thực địa của đơn vị chuyên môn.
+## Tính năng
 
-## Giao diện chính
+- Hiển thị bản đồ và danh sách khu vực ưu tiên.
+- Tra cứu kết quả theo tọa độ.
+- Giải thích các thành phần tạo nên điểm xếp hạng.
+- Tự chuyển sang nền bản đồ dự phòng khi dịch vụ bản đồ trực tuyến không khả dụng.
 
-Giao diện chỉ tập trung vào đầu ra phục vụ người dùng:
+## Công nghệ
 
-- bản đồ các khu vực được xếp hạng ưu tiên;
-- danh sách các khu vực đứng đầu;
-- tra cứu theo tọa độ;
-- giải thích ngắn gọn vì sao một khu vực được xếp cao;
-- chế độ bản đồ dự phòng khi nền bản đồ trực tuyến không tải được.
+- Next.js 15, React 19 và TypeScript cho ứng dụng web.
+- Python và scikit-learn cho quy trình chuẩn bị dữ liệu, huấn luyện và đánh giá mô hình.
+- Leaflet cho bản đồ tương tác.
 
-Các so sánh mô hình, kiểm chứng không gian và phân tích chuyên sâu vẫn nằm trong quy trình nghiên cứu, không đưa lên luồng demo chính.
-
-## Chạy trên máy
+## Chạy ứng dụng
 
 Yêu cầu Node.js 22.
 
@@ -29,43 +28,48 @@ npm install
 npm run dev
 ```
 
-Mở `http://localhost:3000`.
+Mở `http://localhost:3000` trên trình duyệt.
 
-Kiểm tra bản dựng sản xuất:
+Để kiểm tra bản dựng sản xuất:
 
 ```bash
 npm run build
 npm run start
 ```
 
-## Dữ liệu web bắt buộc
+## Chạy quy trình Python
 
-Frontend đọc các tệp sau:
+Cài các thư viện cần thiết:
 
-```text
-public/data/ai/summary.json
-public/data/ai/priority.json
-public/data/ai/lookup_grid.json
-public/data/lookup_grid.json
-src/data/results.json
-src/data/priority.json
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 ```
 
-Không xóa hoặc đổi tên các tệp này nếu chưa cập nhật mã nguồn tương ứng.
+Các chương trình chuẩn bị dữ liệu, huấn luyện, đồng bộ kết quả và kiểm tra nằm trong `scripts/`. Các kiểm thử nằm trong `tests/`.
 
-## Triển khai lên Vercel
+## Nguồn dữ liệu
 
-Dự án đã có `vercel.json` và cấu hình Next.js phù hợp. Cách triển khai khuyến nghị:
+| Nhóm thông tin | Nguồn | Vai trò |
+|---|---|---|
+| Hoạt động không kích lịch sử | THOR | Bằng chứng lịch sử về cường độ hoạt động không kích |
+| Dấu vết hố bom | KH-9 HEXAGON | Dấu vết hố bom phát hiện từ ảnh vệ tinh lịch sử |
+| Dân số | WorldPop | Bối cảnh dân cư |
+| Đường và thủy hệ | OpenStreetMap | Bối cảnh tiếp cận và không gian |
 
-1. Đẩy mã nguồn lên GitHub.
-2. Vào Vercel và chọn **Thêm dự án mới**.
-3. Chọn kho GitHub của dự án.
-4. Để Vercel tự nhận diện **Next.js**.
-5. Không cần đặt biến môi trường cho bản demo hiện tại.
-6. Nhấn **Triển khai**.
+Dữ liệu KH-9 là dấu vết hố bom, không phải nhãn xác nhận vật nổ còn sót lại. Các ô chưa có ghi nhận thực địa cũng không được coi là khu vực an toàn.
 
-Xem hướng dẫn chi tiết tại `TRIEN_KHAI_VERCEL.md`.
+## Cấu trúc chính
 
-## Lưu ý dữ liệu lớn
+```text
+app/          Trang và bố cục Next.js
+components/   Thành phần giao diện và bản đồ
+public/       Dữ liệu và hình ảnh phục vụ trực tiếp cho web
+src/          Mã nguồn Python và dữ liệu kết quả dùng trong ứng dụng
+scripts/      Quy trình dữ liệu, huấn luyện và kiểm tra
+tests/        Kiểm thử TypeScript và Python
+data/real/    Ảnh chụp dữ liệu nguồn có thể tái lập
+```
 
-Không đưa các tệp dữ liệu nguồn dung lượng lớn như raster `.tif`, `.tiff`, `predictions.zip`, môi trường `.venv`, `node_modules` hoặc thư mục kết quả trung gian lên Vercel. Web chỉ cần các tệp JSON và mã nguồn được liệt kê ở trên.
+Không xóa hoặc đổi tên các tệp trong `public/data`, `public/figures` và `src/data` nếu chưa cập nhật mã nguồn tương ứng.
